@@ -2,16 +2,9 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <map>
 
 using namespace std;
-
-struct Guardian
-{
-    string Name;
-    int PowerLevel;
-    string Master;
-    string City;
-};
 
 struct City
 {
@@ -19,15 +12,26 @@ struct City
     vector<string> ConnectedCities;
 };
 
+struct Guardian
+{
+    string name;
+    int powerLevel;
+    string master;
+    string city;
+    vector<Guardian> apprentices;
+};
+
+map<string, Guardian> guardiansMap;
+
 vector<Guardian> loadGuardians(const string& filename)
 {
     vector<Guardian> guardians; //vector donde se almacenan los guardianes
 
     // se abre el archivo
     ifstream inputFile(filename);
-
+	
     // Verficacion
-    if(!inputFile.is_open())
+    if(!inputFile.is_open() || inputFile.fail())
 	{
         cout << "No se puede abrir el archivo de los Guardianes" << filename << endl;
         return guardians; //Returna vacio en caso de que ocurra
@@ -62,7 +66,7 @@ vector<City> loadCities(const string& filename)
 
     ifstream inputFile(filename);
 
-    if (!inputFile.is_open())
+    if (!inputFile.is_open() || inputFile.fail())
 	{
         cout << "Error al abrir el archivo de las Ciudades" << filename << endl;
         return cities;
@@ -96,14 +100,36 @@ int main()
 	vector<Guardian> guardians = loadGuardians("guardians.conf");
 	vector<City> cities = loadCities("cities.conf");
 	
-	//Imprimir los datos de los guardianes
+	//Construccion Arbol de jerarquia
+	for (Guardian& guardian : guardians)
+	{
+	    for (const Guardian& possibleApprentice : guardians)
+		{
+	        if(guardian.name != possibleApprentice.name && guardian.name == possibleApprentice.master)
+			{
+	            guardian.apprentices.push_back(possibleApprentice);
+	        }
+	    }
+	
+	    //Si el guardian no tiene aprendices el valor se toma como none
+	    if(guardian.apprentices.empty())
+		{
+	        guardian.apprentices.push_back({"none", 0, "", ""});
+	    }
+	}
+	
+	// Mostrar los datos de los guardianes con sus aprendices
 	cout << "DATOS GUARDIANES CARGADOS EXITOSAMENTE" << endl;
 	for(const auto& guardian : guardians)
 	{
-        cout << "Name: " << guardian.Name << ", PowerLevel: " << guardian.PowerLevel << ", Master: " << guardian.Master << ", City: " << guardian.City << endl;
-    }
-	
-	//Imprimir los datos de las ciudades
+	    cout << "Name: " << guardian.name << ", PowerLevel: " << guardian.powerLevel << ", Master: " << guardian.master << ", City: " << guardian.city << ", Apprentices: ";
+	    for(const auto& apprentice : guardian.apprentices)
+		{
+	        cout << apprentice.name << " ";
+	    }
+	    cout << endl;
+	}
+    
 	cout << "\nDATOS CIUDADES CARGADOS EXITOSAMENTE" << endl;
 	for (const auto& city : cities)
 	{

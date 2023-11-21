@@ -1,0 +1,19 @@
+Instrucciones de Instalación y Ejecución
+
+Paso 1: Descargar e Instalar Dev-C++
+--------------------------------------
+
+1. Visitar el sitio web de Dev-C++: https://sourceforge.net/software/product/Embarcadero-Dev-Cpp/
+2. Descarga la versión más reciente de Dev-C++ o en caso de problemas la 6.3 que es con la que estoy trabajando en el proyecto
+3. Ejecuta el instalador y seguir las instrucciones hasta que este instalado completamente en el equipo.
+
+
+Paso 2: Abrir y Compilar el Proyecto
+--------------------------------------
+
+1. Abre Dev-C++ y selecciona "Archivo" > "Abrir Proyecto".
+2. Navegar hasta la ubicación del archivo `.cpp` y abrirlo.
+3. Verifica que el código fuente se muestra en el editor.
+4. Selecciona "Ejecutar" > "Compilar & Ejecutar" para compilar y ejecutar el proyecto
+
+Y Listo, Ahora debería poder compilar y ejecutar el proyecto en Dev-C++.
