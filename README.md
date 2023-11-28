@@ -42,3 +42,19 @@ El programa debe contener las siguientes estructuras de datos:
 +Actualización en la lista de candidatos después de la batalla.
 Contribuciones son bienvenidas. Si encuentras errores o mejoras, por favor, crea un pull request.
 
+# Solucion
+Aborde el proyecto en estos 3 pasos a seguir:
++ Identificacion.
++ Implementacion.
++ Ejecucion.
+## Identificacion
+Lircay Hub esta interesado en desarrollar un piloto del juego asi que como programador tenemos que pensar como implementar lo que nos pide que se resumen en:
++ Utilizar estructuras para la implementacion de arbol general y binario, ademas de la utilizacion de un grafo para dar uso a una matriz de adyacencia.
++ Utilizacion de funciones para recorrer, buscar y eliminar dentro de los arboles seran necesarias para desarrollar el proyecto.
+
+## Implementacion
+Este proyecto sera implementado en C++ y utilizara estructuras de datos como grafos para modelar las ciudades y sus conexiones. Los Guardianes se representan mediante una estructura de datos que incluye información sobre su nombre, nivel de poder, maestro, ciudad y aprendices. La interacción con el programa se realiza a través de un menú interactivo que ofrece diversas funcionalidades para gestionar las operaciones de los Guardianes y las ciudades.
+
+## Ejecucion
+Durante la ejecucion se podra dar la validacion y la busqueda de errores, todo esto con el fin de llegar a un programa completamente funcional teniendo en cuenta todo
+lo pedido anteriormente, obviamente habran errores y podria decir que se vuelve tediosa esta parte ya que se resume en un ciclo de programar y compilar, sin embargo los esfuerzos se hacen notar luego de ver como avanza el proyecto a medida que fallas y vuelves a programar.
