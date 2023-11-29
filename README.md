@@ -58,3 +58,6 @@ Este proyecto sera implementado en C++ y utilizara estructuras de datos como gra
 ## Ejecucion
 Durante la ejecucion se podra dar la validacion y la busqueda de errores, todo esto con el fin de llegar a un programa completamente funcional teniendo en cuenta todo
 lo pedido anteriormente, obviamente habran errores y podria decir que se vuelve tediosa esta parte ya que se resume en un ciclo de programar y compilar, sin embargo los esfuerzos se hacen notar luego de ver como avanza el proyecto a medida que fallas y vuelves a programar.
+
+## Video Presentacion
+https://youtu.be/t4AuGQFSm7Y
